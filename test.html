@@ -6,11 +6,59 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js" defer></script>
+    <script>
+        const sliderContainer = document.querySelector('.slider-container');
+const slideButton = document.querySelector('.slide-btn');
+let slideIndex = 0;
+
+// Function to slide images
+function slideImages() {
+  // Calculate the offset for sliding (3 images width: 900px)
+  slideIndex = (slideIndex + 1) % 2; // Toggle between 0 and 1 (two slides)
+  const offset = slideIndex * -sliderContainer.clientWidth; // Calculate the translateX value
+  sliderContainer.style.overflow="visible";
+  sliderContainer.style.transform = `translateX(${offset}px)`;
+}
+
+// Auto-slide every 5 seconds
+let slideInterval = setInterval(slideImages, 5000);
+
+// Button click event to trigger the slide
+slideButton.addEventListener('click', () => {
+  clearInterval(slideInterval); // Stop the automatic sliding temporarily
+  slideImages(); // Slide to the next set of images
+  slideInterval = setInterval(slideImages, 5000); // Restart the auto-slide
+});
+let seq={
+  "blackhoodie":{
+    left:"yellowtee",
+    right:"bluecap",
+  },
+  "yellowtee":{
+    left:"pinktee",
+    right:"blackhoodie",
+  },
+  "bluecap":{
+    left:"blackhoodie",
+    right:"pinktee",
+  },
+  "pinktee":{
+    left:"bluecap",
+    right:"yellowtee",
+  },
+};
+
+let leftb=document.querySelector(".merchleft");
+let rightb=document.querySelector(".merchright");
+
+leftb.addEventListener("click",()=>{
+
+});
+    </script>
 </head>
-<body>
+<body style="overflow:scroll;">
     <div class="main_content">
         <div class="yellow_rectangle yellow_rectangle_1"></div>
-        <button class="open_main"></button>
         <div class="history">
             <div class="img">
                 <img class="img1" src="./assets/images/cover_image.png">
@@ -123,22 +171,18 @@
                             <span>Coming soon...</span>
                         </div>
                         <div class="row2">
-                            <button class="merchleft"></button>
-                            <button class="merchright"></button>
-                        </div>
-                        <div class="row3">
-                            <button>Discover</button>
+                            <button class="merchleft"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#575472"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 12H20M4 12L8 8M4 12L8 16" stroke="#575472" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
+                            <button class="merchright"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#575472" transform="matrix(-1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 12H20M4 12L8 8M4 12L8 16" stroke="#575472" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
                         </div>
                     </div>
                     <div class="merchs">
-                        <div class="merchs1"></div>
-                        <div class="merchs2"></div>
-                        <div class="merchs3"></div>
+                        <div class="merchs1"><img src="./assets/images/Alabay Merch/bluecap.png"></div>
+                        <div class="merchs2"><img src="./assets/images/Alabay Merch/pinktee.png"></div>
+                        <div class="merchs3"><img src="./assets/images/Alabay Merch/yellowtee.png"></div>
                     </div>
                     <div class="merchbg">
-                        <div class="currbg"></div>
+                        <div class="currbg"><img src="./assets/images/Alabay Merch/pinkteebck.png"></div>
                         <div class="nextbg1"></div>
-                        <div class="nextbg2"></div>
                     </div>
                 </div>
             </div>
