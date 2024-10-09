@@ -5,60 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="./script.js" defer></script>
-    <script>
-        const sliderContainer = document.querySelector('.slider-container');
-const slideButton = document.querySelector('.slide-btn');
-let slideIndex = 0;
-
-// Function to slide images
-function slideImages() {
-  // Calculate the offset for sliding (3 images width: 900px)
-  slideIndex = (slideIndex + 1) % 2; // Toggle between 0 and 1 (two slides)
-  const offset = slideIndex * -sliderContainer.clientWidth; // Calculate the translateX value
-  sliderContainer.style.overflow="visible";
-  sliderContainer.style.transform = `translateX(${offset}px)`;
-}
-
-// Auto-slide every 5 seconds
-let slideInterval = setInterval(slideImages, 5000);
-
-// Button click event to trigger the slide
-slideButton.addEventListener('click', () => {
-  clearInterval(slideInterval); // Stop the automatic sliding temporarily
-  slideImages(); // Slide to the next set of images
-  slideInterval = setInterval(slideImages, 5000); // Restart the auto-slide
-});
-let seq={
-  "blackhoodie":{
-    left:"yellowtee",
-    right:"bluecap",
-  },
-  "yellowtee":{
-    left:"pinktee",
-    right:"blackhoodie",
-  },
-  "bluecap":{
-    left:"blackhoodie",
-    right:"pinktee",
-  },
-  "pinktee":{
-    left:"bluecap",
-    right:"yellowtee",
-  },
-};
-
-let leftb=document.querySelector(".merchleft");
-let rightb=document.querySelector(".merchright");
-
-leftb.addEventListener("click",()=>{
-
-});
-    </script>
 </head>
-<body style="overflow:scroll;">
+<body>
     <div class="main_content">
         <div class="yellow_rectangle yellow_rectangle_1"></div>
+        <div class="button_area">
+            <button class="open_main o2" disabled></button>
+        </div>
         <div class="history">
             <div class="img">
                 <img class="img1" src="./assets/images/cover_image.png">

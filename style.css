@@ -26,7 +26,7 @@
     box-sizing: border-box;
 }
 
-body
+#ind1
 {
     height: 100vh;
     width: 100vw;
@@ -39,14 +39,6 @@ body
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-}
-
-embed
-{
-    margin-top: 2vw;
-    width: 99.8%;
-    height: 100%;
-    background-color: #ffffff;
 }
 
 .background
@@ -81,6 +73,20 @@ embed
     width: 96%;
 }
 
+iframe
+{
+    border: none;
+    height: 4vw;
+    width: 98vw;
+    overflow: hidden;
+    border-top-left-radius: 2vw;
+    border-top-right-radius: 2vw;
+    z-index: 2;
+    transition: height 1s;
+    background-color: white;
+    bottom: 0;
+}
+
 .title_area
 {
     margin-top: 1.4vw;
@@ -89,6 +95,7 @@ embed
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     text-align: center;
+    transition: transform 1s;
 }
 
 #title
