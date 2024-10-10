@@ -3,6 +3,7 @@ var sliderContainer;
 var slideButton;
 let slideIndex;
 let slideInterval;
+var flag=true;
 
 let leftb;
 let rightb;
@@ -23,6 +24,13 @@ function checkIframeLoaded() {
 
 function afterLoading()
 {
+
+  e.contentWindow.document.querySelector(".discover").addEventListener("click",()=>{
+    if(flag)
+      window.location.href = "./disc1.html";
+    else
+    window.location.href = "./disc2.html";
+  });
   sliderContainer = e.contentWindow.document.querySelector('.slider-container');
   slideButton = e.contentWindow.document.querySelector('.slide-btn');
   slideIndex = 0;
@@ -204,6 +212,7 @@ function reset3(i,v)
     e.contentWindow.document.querySelector(".img2game").src="./assets/images/AlabayGames/"+v+".png";
     setTimeout(()=>{
       e.contentWindow.document.querySelector(".gameimage").style.transition="transform 0.5s";
+      flag=!flag;
       gb.disabled=false;
     },100)
   }
