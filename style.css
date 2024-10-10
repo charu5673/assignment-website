@@ -39,14 +39,22 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+    overflow: hidden;
+    align-items: center;
 }
 
 .background
 {
     grid-row: 1/2;
     grid-column: 1/2;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: url('./assets/images/coverpage.png');
+    background-repeat: repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .content
@@ -76,7 +84,7 @@
 iframe
 {
     border: none;
-    height: 4vw;
+    height:5vw;
     width: 98vw;
     overflow: hidden;
     border-top-left-radius: 2vw;
@@ -89,23 +97,25 @@ iframe
 
 .title_area
 {
-    margin-top: 1.4vw;
+    margin-top: 3vh;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     text-align: center;
     transition: transform 1s;
+    font-size: 1em;
 }
 
 #title
 {
     background: linear-gradient( #FFF280, #7EFF5E);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: cheeseburga;
     font-weight: 200;
-    font-size: 7.3vw;
+    font-size: 4.5em;
     grid-row: 1/2;
     grid-column: 1/2;
 }
@@ -114,43 +124,44 @@ iframe
 {
     grid-row: 1/2;
     grid-column: 1/2;
-    font-size: 7.3vw;
+    font-size: 4.5em;
     font-family: cheeseburga;
     font-weight: 200;
     text-shadow: 
-      -0.4vw -0.4vw 0 #0F1B29, 
-      0.4vw -0.4vw 0 #0F1B29, 
-      -0.4vw 0.4vw 0 #0F1B29, 
-      0.4vw 0.4vw 0 #0F1B29, 
-      1vw 1vw rgba(15, 26, 41, 1);
+      -0.06em -0.06em 0 #0F1B29, 
+      0.06em -0.06em 0 #0F1B29, 
+      -0.06em 0.06em 0 #0F1B29, 
+      0.06em 0.06em 0 #0F1B29, 
+      0.8rem 0.8rem rgba(15, 26, 41, 1);
 }
 
 .description
 {
+    position: absolute;
     text-align: center;
-    padding: 1vw;
-    padding-left: 3vw;
-    padding-right: 3vw;
-    font-size: 2.1vw;
+    padding: 1vh;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    font-size: 1.3em;
     width: 100%;
     color: white;
     background-color: #181C27;
     font-family: cheeseburga;
     font-weight: 200;
-    margin-top: 18vw;
+    margin-top: 65vh;
 }
 
 .yellow_styling
 {
     background: linear-gradient( #FFF280, #FFA800);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .main_content
 {
     width: 100%;
-
 }
 
 .yellow_rectangle
@@ -178,6 +189,11 @@ iframe
 .yellow_rectangle_2.y2
 {
     margin-top: 0;
+}
+
+.yellow_rectangle_2.y3
+{
+    margin-top: 93vw;
 }
 
 .history
@@ -321,7 +337,7 @@ iframe
     justify-content: center;
   }
   
-  .slide-btn {
+  .slide-btn,.gamemove{
     background-color: #353535;
     color: white;
     border: none;
@@ -333,8 +349,21 @@ iframe
     align-items: center;
     justify-content: center;
   }
+  
+  .decorslidebtn{
+    height: 8vw;
+    aspect-ratio: 2/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-  .slide-btn svg
+  .slide-btn:active
+  {
+    height: 7vw;
+  }
+
+  .slide-btn svg,.gamemove svg
   {
     width: 100%;
     height: auto;
@@ -476,7 +505,7 @@ iframe
 .photo_collage
 {
     width: 100%;
-    margin-top: 9vw;
+    margin-top: 4vw;
     padding-left: 4vw;
     padding-right: 4vw;
     display: grid;
@@ -715,7 +744,7 @@ iframe
 .merch_slider_container
 {
     border-radius: 1.5vw;
-    width: 92%;
+    width: 92vw;
     aspect-ratio: 153/100;
     display: grid;
     grid-template-columns: 1fr;
@@ -741,7 +770,14 @@ iframe
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr;
-    transform: translateX()
+    transition: transform 1s;
+    transform: translateX(-92vw);
+}
+
+.merchs img
+{
+    height: 98%;
+    width: auto;
 }
 
 .merchs div
@@ -763,11 +799,7 @@ iframe
 {
     grid-row: 1/2;
     grid-column: 1/2;
-}
-
-.nextbg
-{
-    z-index: 0;
+    transition: opacity 0.5s;
 }
 
 .merch_overlay .row1 span
@@ -803,10 +835,353 @@ iframe
     width: 5.5vw;
     border-radius: 100vw;
     border: none;
+    background-color: white;
+    color:#575472;
 }
 
 .merch svg
 {
     height: 100%;
     width: 100%;
+}
+
+.games
+{
+    margin-top: 12vw;
+    width: 100%;
+}
+
+.games h2
+{
+    font-family: cheeseburga;
+    color: white;
+    font-weight: 200;
+    text-align: center;
+    font-size: 12vw;
+}
+
+.games p
+{
+    font-family: montserrat;
+    font-weight: 900;
+    text-align: center;
+    color: #353535;
+    font-size: 3.5vw;
+}
+
+.game-slider
+{
+    margin-top: 10vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.game-slider-container
+{
+    aspect-ratio: 178/100;
+    width: 94vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    overflow: hidden;
+}
+
+.game-slider-container div
+{
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
+.gameimage
+{
+    width: 200%;
+    height: 100%;
+    z-index:0;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 94vw 94vw;
+    transition: transform 0.5s;
+}
+
+.gameimage img
+{
+    width: 94vw;
+    height: auto;
+}
+
+.gameoverlay
+{
+    display: grid;
+    width: 94vw;
+    aspect-ratio: 178/100;
+    grid-template-rows: 59fr 41fr;
+    z-index: 1;
+}
+
+.gamemove
+{
+    z-index: 1;
+    height: 9vw;
+    aspect-ratio: 3/4;
+    border-radius: 2vw;
+}
+
+.decorgamemove
+{
+    z-index: 1;
+    align-self: flex-end;
+    justify-self: flex-end;
+    margin-right: 3vw;
+    height: 9vw;
+    aspect-ratio: 3/4;
+    border-radius: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gamemove:active
+{
+    height: 8vw;
+}
+
+.discover
+{
+    z-index: 1;
+    justify-self: center;
+    align-self: flex-end;
+    margin-bottom: 7vw;
+    background-color: #843AFC;
+    border-radius: 100vw;
+    height: 6vw;
+    aspect-ratio: 413/100;
+    box-shadow: 1vw 1vw 1vw #000000;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap:1.1vw;
+    padding-right: 0.8vw;
+    transition: background-color 0.5s;
+}
+
+.discover span
+{
+    font-family: montserrat;
+    font-weight: 900;
+    color: white;
+    font-size: 2.2vw;
+}
+
+.discover svg
+{
+    height: 100%;
+    width: auto;
+}
+
+.previews
+{
+    width: 100%;
+    margin-top: 5vw;
+}
+
+.previews h3
+{
+    padding-left: 3vw;
+    font-size: 3.5vw;
+    color: #353535;
+    font-family: montserrat;
+    font-weight: 900;
+    margin-bottom: 2vw;
+}
+
+.previews span
+{
+    color: #FFA800;
+}
+
+.preview_area
+{
+    width: 100%;
+    display: flex;
+    padding-left: 3vw;
+    align-items: center;
+    gap: 1vw;
+}
+
+.previewimages
+{
+    display: flex;
+    gap:2.5vw;
+    height: 27vw;
+}
+
+.previewimages img
+{
+    height: 100%;
+    width: auto;
+}
+
+.decorprev
+{
+    width: 6vw;
+    aspect-ratio: 3/4;
+    border-radius: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview_area button
+{
+    background-color: #353535;
+    color: white;
+    border: none;
+    width: 6vw;
+    aspect-ratio: 3/4;
+    border-radius: 2vw;
+    box-shadow: 1vw 1vw 2vw #000000c5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview_area button svg
+{
+    height: 100%;
+    width: auto;
+}
+
+.preview_area button:active
+{
+    width: 5vw;
+}
+
+.end
+{
+    margin-top: 10vw;
+    width: 100%;
+    margin-bottom: 30vw;
+}
+
+.end h2
+{
+    font-family: cheeseburga;
+    font-weight: 200;
+    color:#FFA800;
+    font-size: 11vw;
+    padding-left: 4vw;
+}
+
+.endcontent
+{
+    display: flex;
+    width: 100%;
+}
+
+.col1
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.col2
+{
+    align-self: flex-start;
+}
+
+.dial
+{
+    height: 25vw;
+    aspect-ratio: 152/100;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.dial svg
+{
+    grid-row: 1/2;
+    grid-column: 1/2;
+    height: 100%;
+    width: 100%;
+}
+
+.dial >div
+{
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
+.endoverlay
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5vw;
+    gap:2vw
+}
+
+.endrow1,.endrow2
+{
+    display: flex;
+    height: 5vw;
+    align-items: center;
+    gap:1vw;
+}
+
+.endrow1 img,.endrow2 img
+{
+    height: 100%;
+}
+
+.endrow1 span,.endrow2 span
+{
+    font-size: 2.2vw;
+    font-family: montserrat;
+    color: white;
+    font-weight: 900;
+}
+
+.end .img
+{
+    margin-left: 2vw;
+    align-self: flex-start;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 55vw;
+}
+
+.end .img1
+{
+    z-index: 2;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    width: 55vw;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+.end .img2
+{
+    grid-row: 1/2;
+    grid-column: 1/2;
+    width: 55vw;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    -webkit-box-reflect: below -4vw linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.5));
+    filter: grayscale(100%) blur(0.1vw);
+    z-index: -1;
+}
+
+.bgd
+{
+    background-color: #353535;
+    border-radius: 100vw;
+    height: 5vw;
+    width: 5vw;
+    padding: 1vw;
 }
